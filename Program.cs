@@ -20,9 +20,7 @@ namespace CSharpFundamental
         }
         static string toTitleCase(string input)
         {
-            /* Write your code here */
-            string justString = "This is a text";
-            string[] justStringArr = justString.Split(' ');
+            string[] justStringArr = input.Split(' ');
             char[] upperCase = new char[30]; 
             int upperCaseCounter = default(int);
             int counter = default(int);
