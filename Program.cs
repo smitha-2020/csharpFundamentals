@@ -33,7 +33,6 @@ namespace CSharpFundamental
             var builder = new StringBuilder();
             foreach (string str in justStringArr)
             {
-                char strFirstLetter = str[0];
                 string remainingLetters = str[1..];
                 string newStr = string.Concat(str.ToUpper()[..1], remainingLetters);
                 builder.Append(newStr);
