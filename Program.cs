@@ -60,15 +60,19 @@ namespace CSharpFundamental
         static int[,] matrixMultiply(int[,] array1, int[,] array2)
         {
             int[,] newArr = new int[2, 2];
-            for (int i = 0; i < array1.GetLength(0); i++)
+            for (int z = 0; z < array1.GetLength(0); z++)
             {
-                int data = default(int);
-                for (int j = 0; j < array2.GetLength(0); j++)
+                for (int i = 0; i < array1.GetLength(0); i++)
                 {
-                    data += array1[i, j] * array2[j, i];
-                }
-                Console.Write(data + " ");
-                Console.WriteLine();
+                    int data = default(int);
+                    for (int j = 0; j < array2.GetLength(0); j++)
+                    {
+                        data += array1[z, j] * array2[j, i];
+                    }
+                    Console.Write(data + " ");
+                    Console.WriteLine();
+                    newArr[z,i] = data;
+                }    
             }
             return newArr;
         }
