@@ -72,14 +72,13 @@ namespace CSharpFundamental
             {
                 for (int i = 0; i < array1.GetLength(0); i++)
                 {
-                    int data = default(int);
                     for (int j = 0; j < array2.GetLength(0); j++)
                     {
-                        data += array1[z, j] * array2[j, i];
+                        newArr[z, i] += array1[z, j] * array2[j, i];
                     }
                     // Console.Write(data + " ");
                     // Console.WriteLine();
-                    newArr[z, i] = data;
+                    //newArr[z, i] = data;
                 }
             }
             return newArr;
