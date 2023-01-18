@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Text;
 
 namespace CSharpFundamental
 {
@@ -20,7 +21,7 @@ namespace CSharpFundamental
             {
                 for (int j = 0; j < result.GetLength(1); j++)
                 {
-                    Console.Write(result[i,j]+" ");
+                    Console.Write(result[i, j] + " ");
                 }
                 Console.WriteLine();
             }
@@ -29,38 +30,13 @@ namespace CSharpFundamental
         static string toTitleCase(string input)
         {
             string[] justStringArr = input.Split(' ');
-            //List<string> listStr = new List<string>();
-            char[] upperCase = new char[30];
-            int upperCaseCounter = default(int);
-            int counter = default(int);
-            var builder = new System.Text.StringBuilder();
-            for (char i = 'A'; i <= 'Z'; i++)
-            {
-                upperCase[upperCaseCounter] = i;
-                upperCaseCounter = upperCaseCounter + 1;
-            }
+            var builder = new StringBuilder();
             foreach (string str in justStringArr)
             {
                 char strFirstLetter = str[0];
-                counter = 0;
-                if (upperCase.Contains(strFirstLetter))
-                {
-                    builder.Append(str);
-                    builder.Append(' ');
-                    continue;
-                }
-                for (char i = 'a'; i <= 'z'; i++)
-                {
-                    if (strFirstLetter == i)
-                    {
-                        char newUpperChar = upperCase[counter];
-                        string restString = str.Substring(1, str.Length - 1);
-                        string newStr = string.Concat(str.Substring(0, 1).Replace(strFirstLetter, newUpperChar), restString);
-                        builder.Append(newStr);
-                        break;
-                    }
-                    counter = counter + 1;
-                }
+                string remainingLetters = str[1..];
+                string newStr = string.Concat(str.ToUpper()[..1], remainingLetters);
+                builder.Append(newStr);
                 builder.Append(' ');
             }
             return builder.ToString();
@@ -76,9 +52,6 @@ namespace CSharpFundamental
                     {
                         newArr[z, i] += array1[z, j] * array2[j, i];
                     }
-                    // Console.Write(data + " ");
-                    // Console.WriteLine();
-                    //newArr[z, i] = data;
                 }
             }
             return newArr;
