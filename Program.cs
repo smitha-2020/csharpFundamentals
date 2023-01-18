@@ -16,7 +16,15 @@ namespace CSharpFundamental
             int[,] arrayA = { { 3, 5, 4, 6 }, { 3, 7, 8, 3 } };
             int[,] arrayB = { { 5, 1 }, { 8, 4 }, { 2, 9 }, { 2, 3 } };
             int[,] result = matrixMultiply(arrayA, arrayB);
-            Console.WriteLine(result); //share your findings to Slack
+            for (int i = 0; i < result.GetLength(0); i++)
+            {
+                for (int j = 0; j < result.GetLength(1); j++)
+                {
+                    Console.Write(result[i,j]+" ");
+                }
+                Console.WriteLine();
+            }
+            //Console.WriteLine(result); //share your findings to Slack
         }
         static string toTitleCase(string input)
         {
@@ -69,10 +77,10 @@ namespace CSharpFundamental
                     {
                         data += array1[z, j] * array2[j, i];
                     }
-                    Console.Write(data + " ");
-                    Console.WriteLine();
-                    newArr[z,i] = data;
-                }    
+                    // Console.Write(data + " ");
+                    // Console.WriteLine();
+                    newArr[z, i] = data;
+                }
             }
             return newArr;
         }
