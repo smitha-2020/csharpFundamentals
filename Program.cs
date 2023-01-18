@@ -60,7 +60,7 @@ namespace CSharpFundamental
             int[,] newArr = new int[2, 2];
             if (!(array1.GetLength(0) == array2.GetLength(1)))
             {
-                Console.WriteLine("Dimensions do not match");
+                throw new ArgumentException("Dimensions do not match");
             }
             else
             {
