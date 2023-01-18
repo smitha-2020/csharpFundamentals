@@ -42,7 +42,7 @@ namespace CSharpFundamental
         }
         static int[,] matrixMultiply(int[,] array1, int[,] array2)
         {
-            int[,] newArr = new int[2, 2];
+            int[,] newArr = new int[array1.Rank, array2.Rank];
             for (int z = 0; z < array1.GetLength(0); z++)
             {
                 for (int i = 0; i < array1.GetLength(0); i++)
